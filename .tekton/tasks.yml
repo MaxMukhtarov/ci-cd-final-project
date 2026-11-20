@@ -15,7 +15,7 @@ spec:
           value: $(workspaces.source.path)
       workingDir: $(workspaces.source.path)
       securityContext:
-        runAsNonRoot: flase
+        runAsNonRoot: false
         runAsUser: 0
       script: |
         #!/usr/bin/env sh
@@ -49,7 +49,7 @@ spec:
       default: "-v"
   steps:
     - name: nosetest
-      image: python-3.9:slim
+      image: python:3.9-slim
       workingDir: $(workspaces.source.path)
       script: |
           #!/bin/bash
